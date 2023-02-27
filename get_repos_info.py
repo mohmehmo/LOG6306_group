@@ -32,7 +32,6 @@ def github_api_v3_call(url):
 
 def get_repo_info(repo_full_name):
     url = f"https://api.github.com/repos/{repo_full_name}"
-    # url = "https://api.github.com/repos/IBM/claimed"
     print(url)
     body = github_api_v3_call(url)
 
@@ -61,6 +60,7 @@ def main():
     repos_forked_stats = []
     repos_last_activity = []
     repos = pd.read_csv("data/keras/repos_keras_code_filtered(fork_star).csv")
+    repos = pd.read_csv("data/pyTorch/py")
     for index, row in repos.iterrows():
         repo_full_name = row["full_name"]
         repo_forked_stats, repo_last_activity = get_repo_info(repo_full_name)
