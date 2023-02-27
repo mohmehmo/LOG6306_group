@@ -6,8 +6,9 @@ We use Python3.8 for our executions
 We extract all repositories using Python programming languages and one of the three most popular ML frameworks including Keras, Tensorflow, and PyTorch. 
 
 Criteria for filtering out repos
-1. at least 10 forks.
-2. at least 20 stars.
-3. at least 100 commits.
-4. at least 10 contributors.
-5. at least one activity (commit, ...) during last year.
+1. should not be a forked repository.
+2. at least 10 forks.
+3. at least 10 stars.
+4. at least one activity (commit, ...) during last year.
+5. at least 100 commits.
+6. at least 2 contributors.
