@@ -1,7 +1,4 @@
 id,full_name,url,stars,forks,forked,commits,open_issue,closed_issue
-120360765,chromium/chromium,https://api.github.com/repos/chromium/chromium,11432,4417,FALSE,1233617,0,0
-13509108,mozilla/gecko-dev,https://api.github.com/repos/mozilla/gecko-dev,2353,1684,FALSE,832572,0,0
-45717250,tensorflow/tensorflow,https://api.github.com/repos/tensorflow/tensorflow,162647,86282,FALSE,144113,2043,34723
 441354843,alibaba/DeepRec,https://api.github.com/repos/alibaba/DeepRec,116,46,FALSE,65360,37,33
 263748045,NVIDIA/tensorflow,https://api.github.com/repos/NVIDIA/tensorflow,337,58,FALSE,64194,26,40
 291217084,microsoft/tensorflow-directml,https://api.github.com/repos/microsoft/tensorflow-directml,345,20,FALSE,63876,21,34
