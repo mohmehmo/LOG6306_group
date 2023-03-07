@@ -82,14 +82,21 @@ def get_refactoring_commits(repo_full_name):
 
 
 def main():
-    repos = pd.read_csv("data/ml_based_repos.csv", low_memory=False)
+    # all_repos = pd.read_csv("data/ml_based_repos.csv", low_memory=False)
+
+    keras_repos = pd.read_csv("data/keras/keras_repo_100.csv", low_memory=False)
+    pytorch_repos = pd.read_csv("data/pyTorch/pytorch_repo_100.csv", low_memory=False)
+    tensorflow_repos = pd.read_csv("data/tensorflow/tensorflow_repo_100.csv", low_memory=False)
+
+    all_repos = pd.concat([keras_repos, pytorch_repos]).drop_duplicates().reset_index(drop=True)
+    all_repos = pd.concat([all_repos, tensorflow_repos]).drop_duplicates().reset_index(drop=True)
 
     col_names = ["repo_full_name", "commit_url", "commit_html_url"]
     refactoring_commits = pd.DataFrame(columns=col_names)
 
     counter = 1
 
-    for index, row in repos.iterrows():
+    for index, row in all_repos.iterrows():
         repo_full_name = row["full_name"]
         print(f"{counter}-th repository ({repo_full_name}) is started to review....")
         counter += 1
@@ -97,9 +104,9 @@ def main():
         if repo_refactoring_commits.empty:
             continue
         else:
-            refactoring_commits = refactoring_commits.append(repo_refactoring_commits)
+            refactoring_commits = pd.concat([refactoring_commits, repo_refactoring_commits]).drop_duplicates().reset_index(drop=True)
 
-    refactoring_commits.to_csv("data/refactoring_commits.csv", index=False)
+    refactoring_commits.to_csv("data/all_repos_refactoring_commits.csv", index=False)
 
 if __name__ == '__main__':
     main()
