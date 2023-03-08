@@ -12,3 +12,6 @@ Criteria for filtering out repos
 4. at least one activity (commit, ...) during last year.
 5. at least 100 commits.
 6. at least 2 contributors.
+
+We achieved 34 refactirung commits from 40 real ML-based repositories.
+Also, we gathered 192 refactoring commits regarding all (300) ML-based repositories (before manuall checking of repositorie).
